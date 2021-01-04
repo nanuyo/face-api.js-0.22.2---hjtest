@@ -7,6 +7,7 @@
   <script src="js/faceDetectionControls.js"></script>
   <script src="js/imageSelectionControls.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lotto.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -25,7 +26,16 @@
     </div>
 
     <div class="row side-by-side">
-      <h1 id="print_lottonum">Lotto numbers</h1>
+      <!-- <h1 id="print_lottonum">Lotto numbers</h1> -->
+      <p id="pprint_lottonum">
+        <span id="span1_id" class="ball_645 lrg ball1">2</span>
+        <span id="span2_id" class="ball_645 lrg ball2">13</span>
+        <span id="span3_id" class="ball_645 lrg ball3">16</span>
+        <span id="span4_id" class="ball_645 lrg ball4">19</span>
+        <span id="span5_id" class="ball_645 lrg ball5">32</span>
+        <span id="span6_id" class="ball_645 lrg ball6">33</span>
+      </p>
+
       <!-- image_selection_control -->
       <div id="selectList"></div>
       <div class="row">
@@ -153,8 +163,8 @@
         if (lottonum[k] == xplusy) {
           console.log("find the same number at " + k, xplusy);
           samenumflag = 1;
-        } 
-          
+        }
+
 
       }
 
@@ -185,14 +195,19 @@
       }
     }
 
-    let lottonumElement = document.getElementById('print_lottonum');
-
     lottonum.sort(function (a, b) { // 오름차순
       return a - b;
       // 1, 2, 3, 4, 10, 11
     });
 
-    document.getElementById("print_lottonum").innerHTML = lottonum.toString();
+   // document.getElementById("print_lottonum").innerHTML = lottonum.toString();
+
+    document.getElementById("span1_id").innerHTML = lottonum[0].toString();
+    document.getElementById("span2_id").innerHTML = lottonum[1].toString();
+    document.getElementById("span3_id").innerHTML = lottonum[2].toString();
+    document.getElementById("span4_id").innerHTML = lottonum[3].toString();
+    document.getElementById("span5_id").innerHTML = lottonum[4].toString();
+    document.getElementById("span6_id").innerHTML = lottonum[5].toString();
 
 
 
