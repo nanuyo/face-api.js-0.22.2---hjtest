@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="lotto.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 
 <body>
@@ -119,6 +117,9 @@
     <!-- tiny_face_detector_controls -->
 
 </body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <script>
   let withBoxes = true
@@ -234,7 +235,7 @@
   }
 
   $(document).ready(function () {
-    // renderNavBar('#navbar', 'face_landmark_detection')
+    renderNavBar('#navbar', 'face_landmark_detection')
     document.getElementById("selectList").style.display = 'none';
     document.getElementById("face_detector_selection_control").style.display = 'none';
     document.getElementById("div_ssd_mobilenetv1_controls").style.display = 'none';
