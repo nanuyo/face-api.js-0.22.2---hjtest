@@ -137,7 +137,7 @@
       const options = getFaceDetectorOptions()
 
       const results = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
-
+      console.log(results);
       const canvas = $('#overlay').get(0)
       faceapi.matchDimensions(canvas, inputImgEl)
       const resizedResults = faceapi.resizeResults(results, inputImgEl)
