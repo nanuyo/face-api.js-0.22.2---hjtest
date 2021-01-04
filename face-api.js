@@ -2743,6 +2743,7 @@
                   ctx.beginPath();
                   ctx.arc(pt.x, pt.y, pointSize, 0, 2 * Math.PI);
                   ctx.fill();
+                  console.log(pt.x, pt.y);
               };
               this.faceLandmarks.positions.forEach(drawPoint);
           }
