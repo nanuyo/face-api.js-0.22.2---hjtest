@@ -19,12 +19,12 @@
 
     <div class="progress" id="loader">
       <div class="indeterminate"></div>
-      
+
     </div>
     <div style="position: relative" class="margin">
       <img id="inputImg" src="" style="max-width: 800px;" />
       <canvas id="overlay" />
-      
+
     </div>
     <div class="lotto">
       <p id="pprint_lottonum">
@@ -159,14 +159,15 @@
       var xplusy = parseInt((results[0].landmarks.relativePositions[i].x + results[0].landmarks.relativePositions[i].y) * 200 % 45);
       console.log(xplusy);
 
+      if (xplusy == 0)
+        continue;
+
 
       for (k = 0; k < j; k++) {
         if (lottonum[k] == xplusy) {
           console.log("find the same number at " + k, xplusy);
           samenumflag = 1;
         }
-
-
       }
 
       if (samenumflag == 0) {
@@ -201,7 +202,7 @@
       // 1, 2, 3, 4, 10, 11
     });
 
-   // document.getElementById("print_lottonum").innerHTML = lottonum.toString();
+    // document.getElementById("print_lottonum").innerHTML = lottonum.toString();
 
     document.getElementById("span1_id").innerHTML = lottonum[0].toString();
     document.getElementById("span2_id").innerHTML = lottonum[1].toString();
@@ -210,7 +211,7 @@
     document.getElementById("span5_id").innerHTML = lottonum[4].toString();
     document.getElementById("span6_id").innerHTML = lottonum[5].toString();
 
-    
+
 
 
     const canvas = $('#overlay').get(0)
@@ -238,7 +239,7 @@
     document.getElementById("face_detector_selection_control").style.display = 'none';
     document.getElementById("div_ssd_mobilenetv1_controls").style.display = 'none';
     document.getElementById("tiny_face_detector_controls").style.display = 'none';
-    
+
     initImageSelectionControls()
     initFaceDetectionControls()
     run()
