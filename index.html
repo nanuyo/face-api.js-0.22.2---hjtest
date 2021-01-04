@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script src="face-api.js"></script>
   <script src="js/commons.js"></script>
@@ -10,6 +11,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
+
 <body>
   <div id="navbar"></div>
   <div class="center-content page-container">
@@ -23,19 +25,18 @@
     </div>
 
     <div class="row side-by-side">
+      <h1 id="print_lottonum">Lotto numbers</h1>
       <!-- image_selection_control -->
       <div id="selectList"></div>
       <div class="row">
         <label for="imgUrlInput">Get image from URL:</label>
         <input id="imgUrlInput" type="text" class="bold">
       </div>
-      <button
-        class="waves-effect waves-light btn"
-        onclick="loadImageFromUrl()"
-      >
+      <button class="waves-effect waves-light btn" onclick="loadImageFromUrl()">
         Ok
       </button>
-      <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
+      <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="loadImageFromUpload()"
+        accept=".jpg, .jpeg, .png">
       <!-- image_selection_control -->
     </div>
 
@@ -67,16 +68,10 @@
           <label for="minConfidence">Min Confidence:</label>
           <input disabled value="0.5" id="minConfidence" type="text" class="bold">
         </div>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onDecreaseMinConfidence()"
-        >
+        <button class="waves-effect waves-light btn" onclick="onDecreaseMinConfidence()">
           <i class="material-icons left">-</i>
         </button>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onIncreaseMinConfidence()"
-        >
+        <button class="waves-effect waves-light btn" onclick="onIncreaseMinConfidence()">
           <i class="material-icons left">+</i>
         </button>
       </div>
@@ -102,67 +97,131 @@
           <label for="scoreThreshold">Score Threshold:</label>
           <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
         </div>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onDecreaseScoreThreshold()"
-        >
+        <button class="waves-effect waves-light btn" onclick="onDecreaseScoreThreshold()">
           <i class="material-icons left">-</i>
         </button>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onIncreaseScoreThreshold()"
-        >
+        <button class="waves-effect waves-light btn" onclick="onIncreaseScoreThreshold()">
           <i class="material-icons left">+</i>
         </button>
       </div>
     </span>
     <!-- tiny_face_detector_controls -->
 
-  </body>
-
-  <script>
-    let withBoxes = true
-
-    function onChangeHideBoundingBoxes(e) {
-      withBoxes = !$(e.target).prop('checked')
-      updateResults()
-    }
-
-    async function updateResults() {
-      if (!isFaceDetectionModelLoaded()) {
-        return
-      }
-
-      const inputImgEl = $('#inputImg').get(0)
-      const options = getFaceDetectorOptions()
-
-      const results = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
-      console.log(results);
-      const canvas = $('#overlay').get(0)
-      faceapi.matchDimensions(canvas, inputImgEl)
-      const resizedResults = faceapi.resizeResults(results, inputImgEl)
-
-      if (withBoxes) {
-        faceapi.draw.drawDetections(canvas, resizedResults)
-      }
-      faceapi.draw.drawFaceLandmarks(canvas, resizedResults)
-    }
-
-    async function run() {
-      // load face detection and face landmark models
-      await changeFaceDetector(SSD_MOBILENETV1)
-      await faceapi.loadFaceLandmarkModel('/')
-
-      // start processing image
-      updateResults()
-    }
-
-    $(document).ready(function() {
-     // renderNavBar('#navbar', 'face_landmark_detection')
-      initImageSelectionControls()
-      initFaceDetectionControls()
-      run()
-    })
-  </script>
 </body>
+
+<script>
+  let withBoxes = true
+
+  function onChangeHideBoundingBoxes(e) {
+    withBoxes = !$(e.target).prop('checked')
+    updateResults()
+  }
+
+
+  async function updateResults() {
+    if (!isFaceDetectionModelLoaded()) {
+      return
+    }
+
+    const inputImgEl = $('#inputImg').get(0)
+    const options = getFaceDetectorOptions()
+
+    const results = await faceapi.detectAllFaces(inputImgEl, options).withFaceLandmarks()
+    console.log(results);
+    var length = results[0].landmarks.relativePositions.length;
+    console.log(length);
+    var step = parseInt(results[0].landmarks.relativePositions.length / 12);
+    console.log(step);
+    var i;
+    var j = 0;
+    var k;
+    var ll;
+    var samenumflag = 0;
+    var lottonum = new Array(6);
+    console.log(lottonum);
+    for (i = 0; i < length; i += step) {
+      samenumflag = 0;
+      console.log("i=" + i + ", j=" + j);
+      // console.log(i);
+      // console.log(results[0].landmarks.relativePositions[i].x);
+      // console.log(results[0].landmarks.relativePositions[i].y);
+      var xplusy = parseInt((results[0].landmarks.relativePositions[i].x + results[0].landmarks.relativePositions[i].y) * 200 % 45);
+      console.log(xplusy);
+
+
+      for (k = 0; k < j; k++) {
+        if (lottonum[k] == xplusy) {
+          console.log("find the same number at " + k, xplusy);
+          samenumflag = 1;
+        } 
+          
+
+      }
+
+      if (samenumflag == 0) {
+        lottonum[j] = xplusy;
+        j++;
+      }
+
+      if (j > 5)
+        break;
+
+      // var strnum = xplusy.toString();
+      // console.log(strnum);
+      // console.log(strnum[0]);
+    }
+
+    if (j > 5) {
+
+      for (ll = 0; ll < 6; ll++) {
+        console.log(lottonum[ll]);
+      }
+
+    } else {
+      console.log("few numbers");
+      for (ll = j; ll < 6; ll++) {
+        lottonum[ll] = 45 - ll;
+        console.log(lottonum[ll]);
+      }
+    }
+
+    let lottonumElement = document.getElementById('print_lottonum');
+
+    lottonum.sort(function (a, b) { // 오름차순
+      return a - b;
+      // 1, 2, 3, 4, 10, 11
+    });
+
+    document.getElementById("print_lottonum").innerHTML = lottonum.toString();
+
+
+
+    const canvas = $('#overlay').get(0)
+    faceapi.matchDimensions(canvas, inputImgEl)
+    const resizedResults = faceapi.resizeResults(results, inputImgEl)
+
+    if (withBoxes) {
+      faceapi.draw.drawDetections(canvas, resizedResults)
+    }
+    faceapi.draw.drawFaceLandmarks(canvas, resizedResults)
+  }
+
+  async function run() {
+    // load face detection and face landmark models
+    await changeFaceDetector(SSD_MOBILENETV1)
+    await faceapi.loadFaceLandmarkModel('/')
+
+    // start processing image
+    updateResults()
+  }
+
+  $(document).ready(function () {
+    // renderNavBar('#navbar', 'face_landmark_detection')
+    initImageSelectionControls()
+    initFaceDetectionControls()
+    run()
+  })
+</script>
+</body>
+
 </html>
