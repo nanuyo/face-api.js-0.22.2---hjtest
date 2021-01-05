@@ -8,6 +8,12 @@ async function loadImageFromUpload() {
     detectFace()
 }
 
+async function removeImage() {
+    $('#inputImg').get(0).src = "images/hj.jpg"
+    detectFace()
+ 
+}
+
 
 function getCurrentFaceDetectionNet() {
     return faceapi.nets.ssdMobilenetv1
