@@ -45,18 +45,15 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
                         <h4 class="text-white">About</h4>
-                        <p class="text-muted">Add some information about the album below, the author, or any other
-                            background context. Make it a few sentences long so folks can pick up some informative
-                            tidbits. Then, link them off to some social networking sites or contact
-                            information.
-                        </p>
+                        <p class="text-muted">인공지능으로 얼굴사진을 분석하여 로또번호를 추출합니다. 처음 시작시에 AI 데이터를 다운로드 받는데 20초가량 소요됩니다. 사진은
+                            서버로 전송하거나 저장하지 않습니다.</p>
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
+                            <!-- <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li> -->
+                            <li><a href="mailto:hjparkg71@gmail.com" class="text-white">Email me</a></li>
                         </ul>
                     </div>
                 </div>
@@ -71,7 +68,7 @@
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                         <circle cx="12" cy="13" r="4" />
                     </svg>
-                    <strong>Album</strong>
+                    <strong>얼굴로또</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,90 +83,66 @@
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Album example</h1>
-                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the
-                        creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-                        entirely.</p>
-                    <p>
-                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                    </p>
+                    <h1 class="fw-light">얼굴로또</h1>
+                    <p class="lead text-muted">인공지능으로 얼굴사진을 분석하여 로또번호를 추출합니다.</p>
+                    <p class="lead text-muted">처음 시작시에 AI 데이터를 다운로드 받는데 20초가량 소요됩니다.</p>
+                    <p class="lead text-muted">사진은 서버로 전송하거나 저장하지 않습니다.</p>
                 </div>
             </div>
         </section>
 
         <div class="album py-5 bg-light">
             <div class="container">
-
-                <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
                 <div class="row">
                     <div class="col">
                         <div class="card shadow-sm">
-                            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">              <title>Placeholder</title>                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"                  dy=".3em">Thumbnail</text>              </svg>
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
-                                </div>
-                            </div> -->
-                            
-
-
                             <div class="file-upload-content">
                                 <img class="card-img-top" id="inputImg" src="images/hj.jpg" />
-                                <!-- <img id="inputImg" src="images/hj.jpg" style="max-width: 800px;" /> -->
                                 <canvas id="overlay" />
-                                <!-- <input class="file-upload-input card-img-top" width="100%" height="225" type='file' onchange="readURL(this);" accept="image/*" /> -->
-
                             </div>
-
                             <div class="loading">
-                                Loading Face detection and landmark AI datas
+                                AI데이터 읽는중(약 20초)
                                 <div class="spinner-border" role="status">
                                     <span class="sr-only"></span>
                                 </div>
                             </div>
-
-                            <div>
-                                <input class="file-upload-input card-img-top" id="queryImgUploadInput" width="100%"
-                                    height="100" type='file' onchange="loadImageFromUpload();" accept=".jpg, .jpeg, .png" />
-
-                                <!-- <input id="queryImgUploadInput" type="file" class="file-upload-input card-img-top"
-                                    width="100%" height="225" onchange="loadImageFromUpload()"
-                                    accept=".jpg, .jpeg, .png"> -->
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="100"
-                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
-                                        fill="#eceeef" dy=".3em">파일 선택</text>
-                                </svg>
-
-                            </div>
-
-
-                            
-
-                            <div class="lotto">
-                                <p id="pprint_lottonum">
-                                    <span id="span1_id" class="ball_645 lrg ball1">0</span>
-                                    <span id="span2_id" class="ball_645 lrg ball2">0</span>
-                                    <span id="span3_id" class="ball_645 lrg ball3">0</span>
-                                    <span id="span4_id" class="ball_645 lrg ball7">0</span>
-                                    <span id="span5_id" class="ball_645 lrg ball5">0</span>
-                                    <span id="span6_id" class="ball_645 lrg ball11">0</span>
-                                </p>
-                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+
+        <section class="py-5 text-center container">
+            <div>
+                <input class="btn btn-primary my-2" id="queryImgUploadInput" type='file'
+                    onchange="loadImageFromUpload();" accept=".jpg, .jpeg, .png" />
+                <!-- <input class="file-upload-input card-img-top" id="queryImgUploadInput" width="100%"
+                            height="100" type='file' onchange="loadImageFromUpload();"
+                            accept=".jpg, .jpeg, .png" /> -->
+                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="100"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
+                                fill="#eceeef" dy=".3em">파일 선택</text>
+                        </svg> -->
+            </div>
+        </section>
+
+        <section class="py-5 text-center container">
+            <h1 class="fw-light">AI추출 로또번호</h1>
+            <div class="lotto">
+                <p id="pprint_lottonum">
+                    <span id="span1_id" class="ball_645 lrg ball1">0</span>
+                    <span id="span2_id" class="ball_645 lrg ball2">0</span>
+                    <span id="span3_id" class="ball_645 lrg ball3">0</span>
+                    <span id="span4_id" class="ball_645 lrg ball7">0</span>
+                    <span id="span5_id" class="ball_645 lrg ball5">0</span>
+                    <span id="span6_id" class="ball_645 lrg ball11">0</span>
+                </p>
+            </div>
+        </section>
+
 
     </main>
 
@@ -178,9 +151,10 @@
             <p class="float-end mb-1">
                 <a href="#">Back to top</a>
             </p>
-            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-                    href="../getting-started/introduction/">getting started guide</a>.</p>
+            <p class="mb-1">Powered by &copy; Nanuyo</p>
+            <p class="mb-0">New to Nanuyo? <a href="http://blog.naver.com/junjun1971">Visit the homepage</a> or read our
+                <a href="http://blog.naver.com/junjun1971">getting started guide</a>.
+            </p>
         </div>
     </footer>
 

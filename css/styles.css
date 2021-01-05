@@ -8,19 +8,17 @@
     border: white 1px;
     color: white;
     padding: 75px 26px;
-    font-size: 22px;
+    font-size: 33px;
     margin: auto;
-    width: 200px;
+    width: 500px;
     height: 200px;
 }
 
-#overlay,
-.overlay {
+#overlay, .overlay {
     position: absolute;
     top: 0;
     left: 0;
 }
-
 
 .file-upload-input {
     position: absolute;
@@ -33,16 +31,28 @@
     cursor: pointer;
 }
 
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+}
 
-/* .spinner-border {
+.filebox input[type="file"] {
+    /* 파일 필드 숨기기 */
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    color: white;
-    z-index:300000;
-    filter: alpha(opacity=80);
-    -moz-opacity: 0.8;
-    opacity: 0.8;   
-  } */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

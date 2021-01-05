@@ -9,7 +9,6 @@ async function loadImageFromUpload() {
 }
 
 
-
 function getCurrentFaceDetectionNet() {
     return faceapi.nets.ssdMobilenetv1
 }
