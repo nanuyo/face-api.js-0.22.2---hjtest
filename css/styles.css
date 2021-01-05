@@ -1,0 +1,44 @@
+.loading{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 300000;
+    border: white 1px;
+    color: white;
+    padding: 75px 26px;
+    font-size: 22px;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+  }
+
+  #overlay, .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+  /* .spinner-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    color: white;
+    z-index:300000;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;   
+  } */
