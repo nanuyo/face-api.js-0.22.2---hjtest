@@ -1,89 +1,199 @@
 <!doctype html>
-<html lang="en" class="h-100">
-  <head>
+<html lang="kr">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>Sticky Footer Navbar Template · Bootstrap v5.0</title>
+    <title>얼굴로또</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
-    
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/lotto.css">
 
     <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
         }
-      }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
-  </head>
-  <body class="d-flex flex-column h-100">
-    
-<header>
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Fixed navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
 
-<!-- Begin page content -->
-<main class="flex-shrink-0">
-  <div class="container">
-    <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-    <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-    <p>Back to <a href="../examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-  </div>
-</main>
+</head>
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
-</footer>
+<body>
+
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Add some information about the album below, the author, or any other
+                            background context. Make it a few sentences long so folks can pick up some informative
+                            tidbits. Then, link them off to some social networking sites or contact
+                            information.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
+                        viewBox="0 0 24 24">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                    </svg>
+                    <strong>Album</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Album example</h1>
+                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the
+                        creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
+                        entirely.</p>
+                    <p>
+                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">              <title>Placeholder</title>                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"                  dy=".3em">Thumbnail</text>              </svg>
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div> -->
+                            
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+                            <div class="file-upload-content">
+                                <img class="card-img-top" id="inputImg" src="images/hj.jpg" />
+                                <!-- <img id="inputImg" src="images/hj.jpg" style="max-width: 800px;" /> -->
+                                <canvas id="overlay" />
+                                <!-- <input class="file-upload-input card-img-top" width="100%" height="225" type='file' onchange="readURL(this);" accept="image/*" /> -->
 
-      
-  </body>
+                            </div>
+
+                            <div class="loading">
+                                Loading Face detection and landmark AI datas
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <input class="file-upload-input card-img-top" id="queryImgUploadInput" width="100%"
+                                    height="225" type='file' onchange="loadImageFromUpload();" accept=".jpg, .jpeg, .png" />
+
+                                <!-- <input id="queryImgUploadInput" type="file" class="file-upload-input card-img-top"
+                                    width="100%" height="225" onchange="loadImageFromUpload()"
+                                    accept=".jpg, .jpeg, .png"> -->
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
+                                        fill="#eceeef" dy=".3em">파일 선택</text>
+                                </svg>
+
+                            </div>
+
+
+                            
+
+                            <div class="lotto">
+                                <p id="pprint_lottonum">
+                                    <span id="span1_id" class="ball_645 lrg ball1">0</span>
+                                    <span id="span2_id" class="ball_645 lrg ball2">0</span>
+                                    <span id="span3_id" class="ball_645 lrg ball3">0</span>
+                                    <span id="span4_id" class="ball_645 lrg ball7">0</span>
+                                    <span id="span5_id" class="ball_645 lrg ball5">0</span>
+                                    <span id="span6_id" class="ball_645 lrg ball11">0</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+                    href="../getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/face-api.min.js"></script>
+    <script src="js/face-detection.js"></script>
+
+</body>
+
 </html>

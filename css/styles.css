@@ -1,4 +1,4 @@
-.loading{
+.loading {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -12,15 +12,17 @@
     margin: auto;
     width: 200px;
     height: 200px;
-  }
+}
 
-  #overlay, .overlay {
+#overlay,
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
-  }
+}
 
-  .file-upload-input {
+
+.file-upload-input {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -29,8 +31,10 @@
     outline: none;
     opacity: 0;
     cursor: pointer;
-  }
-  /* .spinner-border {
+}
+
+
+/* .spinner-border {
     position: absolute;
     top: 0;
     left: 0;
