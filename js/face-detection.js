@@ -23,8 +23,8 @@ async function loadModels(e) {
     $('.loading').show()
     Promise.all([
         await faceapi.loadSsdMobilenetv1Model(modelPath), //be cafreful not to delete ","
-        await faceapi.loadFaceLandmarkModel(modelPath),
-        //faceapi.loadFaceLandmarkTinyModel(modelPath), //tiny = true 
+        //await faceapi.loadFaceLandmarkModel(modelPath),
+        await faceapi.loadFaceLandmarkTinyModel(modelPath), //tiny = true 
     ]).then(function () {
         $('.loading').hide()
         console.log(getCurrentFaceDetectionNet())
@@ -40,8 +40,9 @@ var results
 async function detectFace(e) {
     const input = document.getElementById('inputImg')
     const canvas = $('#overlay').get(0)
-    results = await faceapi.detectAllFaces(input).withFaceLandmarks()
-    // Tinylandmark: results = await faceapi.detectAllFaces(input).withFaceLandmarks(true)
+    //results = await faceapi.detectAllFaces(input).withFaceLandmarks()
+    // Tinylandmark: 
+    results = await faceapi.detectAllFaces(input).withFaceLandmarks(true)
     console.log(results)
     console.log("c3")
     drawLotto()
