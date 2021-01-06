@@ -101,10 +101,9 @@
                 </p>
             </div>
         </section>
-      
+
 
         <section class="py-1 text-center container">
-
             <div class="album py-5 bg-light">
                 <div class="container">
                     <div class="row">
@@ -113,13 +112,20 @@
                                 <div class="file-upload-content">
                                     <img class="card-img-top" id="inputImg" src="images/hj.jpg" />
                                     <canvas id="overlay" />
+
                                 </div>
                                 <div class="loading">
-
                                     <div class="spinner-grow" role="status">
                                         <span class="sr-only"></span>
                                     </div>
-                                    AI데이터 읽는중(약 20초)
+                                    Loading AI data(20sec)
+                                </div>
+
+                                <input class="file-upload-input card-img-top" id="queryImgUploadInput" width="100%"
+                                    height="100" type='file' onchange="loadImageFromUpload();"
+                                    accept=".jpg, .jpeg, .png" />
+                                <div class="card-body">
+                                    <button class="btn btn-primary my-2">사진 선택</button>
                                 </div>
                             </div>
                         </div>
@@ -128,24 +134,13 @@
             </div>
         </section>
 
-        <section class="py-1 text-center container">
+        <!-- <section class="py-1 text-center container">
             <div>
-                <input class="btn btn-primary my-2" id="queryImgUploadInput" type='file'
+                <input class="btn btn-primary my-2" id="queryImgUploadInput" type='file' 
                     onchange="loadImageFromUpload();" accept=".jpg, .jpeg, .png" />
-                <!-- <button class="btn btn-secondary my-2" onclick="removeImage();">사진초기화</button> -->
-
-                <!-- <input class="file-upload-input card-img-top" id="queryImgUploadInput" width="100%"
-                            height="100" type='file' onchange="loadImageFromUpload();"
-                            accept=".jpg, .jpeg, .png" /> -->
-                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="100"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
-                                fill="#eceeef" dy=".3em">파일 선택</text>
-                        </svg> -->
+                <button class="btn btn-secondary my-2" onclick="removeImage();">사진초기화</button>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
